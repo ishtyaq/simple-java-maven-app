@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                withDockerServer(url: 'tcp://localhost:2375', useTLS: false) {
+                withDockerServer(uri: 'tcp://localhost:2375', useTLS: false) {
                     sh 'mvn -B -DskipTests clean package'
                 }
             }
